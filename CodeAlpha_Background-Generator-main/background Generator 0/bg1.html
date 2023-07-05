@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Background Generator CSS</title>
+        <style>
+            body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+            .box{
+                margin: auto;
+                border-style: solid;
+                border-radius: 10px;
+                width:auto;
+                height:auto;
+                border-width: 1px;
+                border-color: black;
+                background-image:url("colors2.jpg");
+                background-size:cover;
+                background-repeat: no-repeat;
+                justify-content: center;
+                padding: 1%;
+                position: relative;
+
+            }
+            input{
+            height: 60px;
+            width: 150px;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            border-radius: 50%;
+            }
+
+            .first::-webkit-color-swatch,
+            .second::-webkit-color-swatch{
+            border-radius: 50%;
+            border: 2px solid #888;
+            }
+            .desc{
+                position: absolute;
+                display: block;
+                width:1000px;
+                height: 200px;
+                padding: 1%;
+                border: solid black 1px;
+                border-radius: 3%;
+                background-color: rgba(255, 255, 255, 0.475);
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                float: inline-end;
+                top: 90%;
+                /* bottom: 100%; */
+                /* margin-top: 50px; */
+            }
+            .footer{
+                position: absolute;
+                top: 100%;
+                border: none;
+                width: 100%;
+                height: 100px;
+                margin-top: 10%;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="box">
+            <h1>Background Generator</h1>
+            <div class="colors">
+                <input type="color" class="first">
+                <input type="color" class="second">
+            </div>
+            <script>
+                const body = document.querySelector("body");
+                const first = document.querySelector(".first");
+                const second = document.querySelector(".second");
+
+                function gradient() 
+                {
+                body.style.background = `linear-gradient(to right, ${first.value}, ${second.value})`
+                }
+
+                first.addEventListener("input", gradient);
+                second.addEventListener("input", gradient);
+            </script>
+        </div>
+        <div class="desc">
+            <p>
+                A CSS background generator is a tool or code snippet that helps developers and designers create visually appealing backgrounds for their webpages. It simplifies the process of generating CSS code for background properties, allowing users to customize colors, gradients, images, and other background effects.
+            </p>
+            <p>
+                CSS background generators are particularly useful for those who may not have a deep understanding of CSS or prefer a visual approach to design. They save time and effort by eliminating the need to manually experiment with CSS properties and values.
+            </p>
+            <p>
+                By using a CSS background generator, developers and designers can easily create visually stunning backgrounds that enhance the overall aesthetics of their websites. Whether it's a simple solid color, a gradient, or an intricate pattern, these tools make it easier for users to achieve the desired look and feel for their webpages with minimal hassle.
+            </p>
+        </div>
+        <div class="footer">
+            <p>    </p>
+        </div>
+    </body>
+</html>
